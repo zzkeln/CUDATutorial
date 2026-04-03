@@ -1,5 +1,6 @@
 # 总结
 + shared memory被分为多个bank，划分的方法是：bank = (addr / 4) % 32
++ bank conflict是shared memory并发访问的效率问题
 
 好，这一块是 CUDA 性能优化里**非常关键但又很容易被低估的点**。你如果把 **warp + memory coalescing + bank conflict** 这三件事吃透，基本就具备写高性能 kernel 的核心能力了。
 
