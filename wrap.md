@@ -1,5 +1,6 @@
 # 总结：
 + wrap是sm的调度基本单位，一个Wrap内包含32个线程，任何时刻warp内所有线程都必须执行同一个指令，如果出现wrap divergence，那么会让未执行的线程变成inactive，降低了并发度带来效率下降。
++ wrap对应SM
 + CUDA 的调度单位是 block，每个 block 必须完整地运行在一个 SM 上，不会被拆分到多个 SM，这样Block内的thread才可以使用同一个共享内存
 
 ## wrap
